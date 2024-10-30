@@ -1,0 +1,136 @@
+@import "../../scss/colors";
+@import "../../scss/mixins";
+
+.mainPage {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $Gray_100;
+    .request {
+        height: 100%;
+        width: 45%;
+        flex-direction: column;
+        @include flex-center;
+        input {
+            width: calc(490px - 24px);
+            height: 42px;
+            border-radius: 8px;
+            border: solid 1px $Geyser;
+            padding: 0 12px;
+            color: $Gray_100;
+            font-size: 14px;
+            &:focus {
+                outline: none;
+            }
+            &::placeholder {
+                font-size: 14px;
+            }
+        }
+        .inputWrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            label {
+                font-size: 14px;
+                color: $Gray_80;
+            }
+        }
+        button {
+            width: 490px;
+            height: 42px;
+            color: $White;
+            font-size: 16px;
+            background: linear-gradient(
+                to bottom,
+                $Blue_ribbon 0%,
+                $Blue_chill 100%
+            );
+            border-radius: 8px;
+            margin-top: 20px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 50px;
+        }
+        .history {
+            font-size: 14px;
+            color: $Gray_70;
+            text-decoration: underline;
+        }
+    }
+    .weatherInfo {
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        min-height: 360px;
+        .location {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .temperature {
+            font-size: 54px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+        .weatherType {
+            font-size: 14px;
+            color: $Oxford_blue;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .mainPage {
+        flex-direction: column;
+        padding: 60px 16px 0 16px;
+        max-height: calc(100vh - 60px);
+        .request {
+            width: 100%;
+            height: 40%;
+            input {
+                width: calc(100% - 26px);
+            }
+            .inputWrapper {
+                width: 100%;
+                max-width: 450px;
+            }
+            button {
+                width: 100%;
+                max-width: 450px;
+            }
+        }
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1440px) {
+    .mainPage {
+        padding: 60px 16px 0 16px;
+        height: calc(100vh - 60px);
+        .request {
+            width: 100%;
+            height: 40%;
+            input {
+                width: calc(100% - 26px);
+            }
+            .inputWrapper {
+                width: 100%;
+                max-width: 450px;
+            }
+            button {
+                width: 100%;
+                max-width: 450px;
+            }
+        }
+    }
+}
+
+@supports (height: 100dvh) {
+    .mainPage {
+        max-height: calc(100dvh - 80px);
+    }
+}

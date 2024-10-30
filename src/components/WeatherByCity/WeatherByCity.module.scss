@@ -1,0 +1,32 @@
+@import "../../scss/colors";
+@import "../../scss/mixins";
+
+.weatherByCity {
+    padding: 12px;
+    flex: 1 1 calc(50% - 32px);
+    max-width: calc(50% - 32px);
+    background: $Gray_30;
+    height: calc(76px - 24px);
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    .leftBlock {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        .city {
+            font-weight: 700;
+        }
+    }
+    .rightBlock {
+        @include flex-center;
+    }
+}
+
+@media (max-width: 768px) {
+    .weatherByCity {
+        max-width: none;
+    }
+}
